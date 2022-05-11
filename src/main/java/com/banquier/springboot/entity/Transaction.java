@@ -1,9 +1,8 @@
 package com.banquier.springboot.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 
 @Entity
@@ -14,8 +13,7 @@ public class Transaction {
 	@Column(name="idTransaction")
 	private int id;
 	private int somme;
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Date dateTransaction;
+	private LocalDate dateTransaction;
 	@ManyToOne @JoinColumn(name="idCompteDebiteur")
 	private Compte debiteur;
 	@ManyToOne @JoinColumn(name="idCompteCrediteur")
@@ -35,10 +33,11 @@ public class Transaction {
 		this.somme = somme;
 	}
 
-	public Date getDateTransaction() {
+	public LocalDate getDateTransaction() {
 		return dateTransaction;
 	}
-	public void setDateTransaction(Date dateTransaction){
+
+	public void setDateTransaction(LocalDate dateTransaction) {
 		this.dateTransaction = dateTransaction;
 	}
 

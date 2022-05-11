@@ -1,9 +1,9 @@
 package com.banquier.springboot.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.UUID;
 
 
 @Entity
@@ -16,17 +16,15 @@ public class Client {
 	private int sexe;
 	private String firstname;
 	private String lastname;
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Date birthDay;
+	private LocalDate birthday;
 	private String adresse;
 	private String ville;
 	private String pays;
 	private String codePostal;
 	private String tel;
-	private String numClient;
+	private UUID numClient;
 	private String mdpClient;
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Date Created_at;
+	private LocalDate createdAt;
 
 
 
@@ -62,12 +60,12 @@ public class Client {
 		this.lastname = lastname;
 	}
 
-	public Date getBirthDay() {
-		return birthDay;
+	public LocalDate getBirthday() {
+		return birthday;
 	}
 
-	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getAdresse() {
@@ -110,11 +108,11 @@ public class Client {
 		this.tel = tel;
 	}
 
-	public String getNumClient() {
+	public UUID getNumClient() {
 		return numClient;
 	}
 
-	public void setNumClient(String numClient) {
+	public void setNumClient(UUID numClient) {
 		this.numClient = numClient;
 	}
 
@@ -126,11 +124,11 @@ public class Client {
 		this.mdpClient = mdpClient;
 	}
 
-	public Date getCreated_at() {
-		return Created_at;
+	public LocalDate getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(Date created_at) {
-		Created_at = created_at;
+	public void setCreatedAt(LocalDate createdAt) {
+		this.createdAt = createdAt;
 	}
 }

@@ -1,9 +1,8 @@
 package com.banquier.springboot.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="Justificatifs")
@@ -14,8 +13,7 @@ public class Justificatif {
     private int id;
     private boolean typeJustificatif;
     private String pdfJustificatif;
-    @DateTimeFormat(pattern="dd/MM/yyyy")
-    private Date created_at;
+    private LocalDate created_at;
     @ManyToOne @JoinColumn(name="idClient")
     private Client clientid;
 
@@ -44,12 +42,12 @@ public class Justificatif {
         this.pdfJustificatif = pdfJustificatif;
     }
 
-    public Date getCreated_at() {
+    public LocalDate getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
-        created_at = created_at;
+    public void setCreated_at(LocalDate created_at) {
+        this.created_at = created_at;
     }
 
     public Client getClientid() {
