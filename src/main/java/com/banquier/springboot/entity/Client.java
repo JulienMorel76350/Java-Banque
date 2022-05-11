@@ -26,7 +26,8 @@ public class Client {
 	private String mdpClient;
 	private LocalDate createdAt;
 
-
+	public Client() {
+	}
 
 	public int getId() {
 		return id;

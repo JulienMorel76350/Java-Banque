@@ -17,6 +17,8 @@ public class Justificatif {
     @ManyToOne @JoinColumn(name="idClient")
     private Client clientid;
 
+    public Justificatif() {
+    }
 
     public int getId() {
         return id;

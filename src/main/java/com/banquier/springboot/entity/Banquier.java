@@ -1,5 +1,7 @@
 package com.banquier.springboot.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,10 +14,12 @@ public class Banquier {
     private int sexe;
     private String firstname;
     private String lastname;
+    @JsonIgnore
     private String mdpBanquier;
     private Boolean admin;
 
-
+    public Banquier() {
+    }
 
     public int getId() {
         return id;

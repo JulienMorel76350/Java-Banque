@@ -19,6 +19,9 @@ public class Compte {
     @ManyToOne @JoinColumn(name="idClient")
     private Client clientid;
 
+    public Compte() {
+    }
+
     public int getId() {
         return id;
     }

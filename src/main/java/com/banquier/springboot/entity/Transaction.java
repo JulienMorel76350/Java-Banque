@@ -20,6 +20,9 @@ public class Transaction {
 	@ManyToOne @JoinColumn(name="idCompteCrediteur")
 	private Compte crediteur;
 
+	public Transaction() {
+	}
+
 	public int getId() {
 		return id;
 	}
