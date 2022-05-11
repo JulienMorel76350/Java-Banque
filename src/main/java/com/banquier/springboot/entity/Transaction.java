@@ -3,6 +3,7 @@ package com.banquier.springboot.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -18,7 +19,7 @@ public class Transaction {
 	private Compte debiteur;
 	@ManyToOne @JoinColumn(name="idCompteCrediteur")
 	private Compte crediteur;
-	
+
 	public int getId() {
 		return id;
 	}
