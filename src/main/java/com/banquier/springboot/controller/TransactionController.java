@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/transactions")
 public class TransactionController {
 	@Autowired
 	private TransactionRepository transactionRepository;
 
-	@RequestMapping(value = "/transaction", produces="application/json")
+	@RequestMapping(value = "", produces="application/json")
 	public List<Transaction> getAll(){
 		return transactionRepository.findAll();
 	}
