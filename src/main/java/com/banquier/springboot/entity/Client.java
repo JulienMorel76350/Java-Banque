@@ -1,8 +1,6 @@
 package com.banquier.springboot.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -25,7 +23,9 @@ public class Client {
 	private String codePostal;
 	private String tel;
 	private UUID numClient;
-	private String mdpClient;
+	@OneToOne
+	@JoinColumn(name="idUser")
+	private User user;
 	private LocalDate createdAt;
 
 	public Client() {
@@ -119,12 +119,12 @@ public class Client {
 		this.numClient = numClient;
 	}
 
-	public String getMdpClient() {
-		return mdpClient;
+	public User getUser() {
+		return user;
 	}
 
-	public void setMdpClient(String mdpClient) {
-		this.mdpClient = mdpClient;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public LocalDate getCreatedAt() {

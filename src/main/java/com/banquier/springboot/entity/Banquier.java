@@ -14,9 +14,10 @@ public class Banquier {
     private int sexe;
     private String firstname;
     private String lastname;
-    @JsonIgnore
-    private String mdpBanquier;
     private Boolean admin;
+    @OneToOne
+    @JoinColumn(name="idUser")
+    private User user;
 
     public Banquier() {
     }
@@ -45,11 +46,11 @@ public class Banquier {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    public String getMdpBanquier() {
-        return mdpBanquier;
+    public User getUser() {
+        return user;
     }
-    public void setMdpBanquier(String mdpBanquier) {
-        this.mdpBanquier = mdpBanquier;
+    public void setUser(User user) {
+        this.user = user;
     }
     public Boolean getAdmin() {
         return admin;
